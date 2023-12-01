@@ -22,7 +22,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 }
                 seen.remove(c);
                 left++;
-                right++; // Increment right to move the window forward
+                // right++; // Increment right to move the window forward
             }
         }
 
