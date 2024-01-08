@@ -8,6 +8,8 @@ public class MedianofTwoSortedArrays {
 
         int i = 0, j = 0, k = 0;
 
+        // Merge two arrays
+
         while (i < nums1.length && j < nums2.length) {
 
             if (nums1[i] < nums2[j]) {
@@ -18,14 +20,15 @@ public class MedianofTwoSortedArrays {
 
         }
 
+        // Add remaining elements from nums1
         while (i < nums1.length) {
             merged[k++] = nums1[i++];
         }
-
+        // Add remaining elements from nums2
         while (j < nums2.length) {
             merged[k++] = nums2[j++];
         }
-
+        // Find median
         int n = merged.length;
 
         if (n % 2 == 0) {
