@@ -66,6 +66,25 @@ public class LL {
         secondLast.next = null;
     }
 
+    public void reverseList() {
+        if (head == null || head.next == null) {
+            return;
+        }
+        Node prev = head;
+        Node currentNode = head.next;
+
+        while (currentNode != null) {
+            Node nextNode = currentNode.next;
+            currentNode.next = prev;
+
+            // update
+            prev = currentNode;
+            currentNode = nextNode;
+        }
+        head.next = null;
+        head = prev;
+    }
+
     public void print() {
         if (head == null) {
             System.out.println("The list is empty");
@@ -84,11 +103,12 @@ public class LL {
     public static void main(String[] args) {
         LL list = new LL();
 
-        list.addFirst("Hello");
-        list.addLast("World");
-        // list.addLast("People");
-        // list.deleteFirst();
-        list.deleteLast();
+        list.addLast("1");
+        list.addLast("2");
+        list.addLast("3");
+        list.addLast("4");
+        list.addLast("5");
+        list.reverseList();
         list.print();
     }
 
